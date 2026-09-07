@@ -1,0 +1,13 @@
+MEU MELIPONÁRIO — DEPLOY RECOMENDADO
+
+A aplicação usa PostgreSQL (Neon) e deve ser hospedada em uma plataforma que use a variável DATABASE_URL.
+
+Arquitetura recomendada:
+- Frontend/backend Next.js: Vercel
+- Banco de dados: Neon PostgreSQL
+- Variáveis de ambiente: DATABASE_URL e AUTH_SECRET
+
+IMPORTANTE:
+- Não use SQLite/local meliponario.db em hospedagem serverless.
+- Não coloque o banco de dados dentro do GitHub.
+- Antes de cadastrar dados reais, teste cadastro, login, meliponários, colônias, visitas e persistência após novo deploy.

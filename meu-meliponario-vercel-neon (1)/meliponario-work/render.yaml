@@ -1,0 +1,3 @@
+# Este projeto agora usa Vercel + Neon PostgreSQL.
+# O arquivo é mantido apenas para não quebrar repositórios antigos.
+# Não use este arquivo para fazer deploy com SQLite no Render Free.

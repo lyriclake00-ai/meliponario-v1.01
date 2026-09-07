@@ -1,0 +1,57 @@
+MEU MELIPONÁRIO — VERCEL + NEON POSTGRESQL
+
+Esta versão do projeto foi preparada para deixar de usar SQLite/local meliponario.db e usar PostgreSQL no Neon.
+
+ARQUITETURA
+1. Aplicação: Vercel
+2. Banco: Neon PostgreSQL
+3. Variáveis: DATABASE_URL e AUTH_SECRET
+
+PASSO 1 — GITHUB
+Envie os arquivos deste projeto para o repositório GitHub. Não envie arquivos .env com senhas.
+
+PASSO 2 — VERCEL
+1. Crie um novo projeto na Vercel a partir do repositório GitHub.
+2. Se o projeto estiver dentro de uma pasta, informe essa pasta em Root Directory.
+3. Build Command: npm run build
+4. Start Command: não é necessário preencher para o deploy padrão Next.js; se a interface pedir, use npm run start.
+
+PASSO 3 — NEON
+1. No projeto da Vercel, abra Storage/Marketplace e adicione Neon.
+2. Crie o banco PostgreSQL.
+3. A integração fornecerá DATABASE_URL.
+
+PASSO 4 — AUTH_SECRET
+Crie uma variável de ambiente AUTH_SECRET com um segredo longo e aleatório. Não compartilhe esse valor.
+
+PASSO 5 — CRIAR AS TABELAS
+Antes de cadastrar dados reais, abra o SQL Editor do Neon (ou o navegador de banco disponibilizado pela Vercel/Neon) e execute o conteúdo de:
+
+  drizzle/0000_initial.sql
+
+Isso cria as tabelas e índices do Meu Meliponário.
+
+PASSO 6 — TESTE O BANCO
+Abra:
+  /api/health
+
+O resultado esperado é:
+  {"ok":true}
+
+PASSO 7 — TESTE ANTES DE USAR DADOS REAIS
+1. Cadastre um usuário de teste.
+2. Crie um meliponário.
+3. Crie uma colônia.
+4. Registre uma visita.
+5. Saia e entre novamente.
+6. Confirme que os dados continuam lá.
+7. Faça um novo deploy.
+8. Confirme novamente que os dados continuam lá.
+
+IMPORTANTE
+- Não use SQLite no Vercel para os dados do aplicativo.
+- Não coloque DATABASE_URL dentro do código.
+- Não envie senhas ou arquivos .env para o GitHub.
+- A imagem do meliponário continua funcionando nesta versão.
+- O contador geral de visitas usa dias distintos de visita.
+- O card de visitas da Home foi corrigido para usar a mesma regra de dias de visita.

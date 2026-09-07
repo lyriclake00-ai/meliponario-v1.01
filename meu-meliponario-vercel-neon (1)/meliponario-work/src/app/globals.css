@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --mel-dark: #1f4d2e;
+  --mel-mid: #2f7d4f;
+  --mel-honey: #f5b301;
+  --mel-orange: #e8891b;
+}
+
+@theme {
+  --color-melidark: #1b4332;
+  --color-melimid: #2d6a4f;
+  --color-melilight: #52b788;
+  --color-melihoney: #f4b400;
+  --color-meliamber: #e8891b;
+  --color-melibg: #f4f7f2;
+}
+
+html, body {
+  background: #f4f7f2;
+  color: #1b2b22;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+  border: 1px solid rgba(27, 67, 50, 0.06);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2d6a4f, #1b4332);
+  color: white;
+}
+.btn-honey {
+  background: linear-gradient(135deg, #f4b400, #e8891b);
+  color: #3a2a00;
+}
+
+input, select, textarea {
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #2d6a4f !important;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #cbd6ce; border-radius: 8px; }
+
+.fade-in { animation: fadeIn .3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px);} to {opacity:1; transform:none;} }
