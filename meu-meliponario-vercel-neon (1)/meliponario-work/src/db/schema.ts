@@ -5,7 +5,6 @@ import {
   text,
   real,
   timestamp,
-  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 const ts = (name: string) => timestamp(name, { withTimezone: true, mode: "date" });
@@ -192,12 +191,6 @@ export const notificationDismissals = pgTable("notification_dismissals", {
   chave: text("chave").notNull(),
   dismissedAt: ts("dismissed_at").notNull().defaultNow(),
 });
-
-export const notificationDismissalUniqueIndex = uniqueIndex("uq_notification_dismiss").on(
-  notificationDismissals.userId,
-  notificationDismissals.meliponarioId,
-  notificationDismissals.chave,
-);
 
 // ============ HISTORICO / AUDITORIA ============
 export const auditorias = pgTable("auditorias", {
